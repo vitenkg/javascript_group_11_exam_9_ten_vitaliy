@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Home.css';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchData} from "../../store/Actions/ContactsAction/ContactsAction";
+import {fetchData, fetchDataDelete} from "../../store/Actions/ContactsAction/ContactsAction";
 import ContactInfo from "../../Components/ContactInfo/ContactInfo";
 import Modal from "../../Components/UI/Modal/Modal";
 import {useHistory} from "react-router-dom";
@@ -16,7 +16,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(fetchData());
-    }, [dispatch, history]);
+    }, [dispatch]);
 
     const onClickHandler = (data) => {
         setModalOpen(true);
@@ -32,13 +32,20 @@ const Home = () => {
         setModalOpen(false);
     }
 
+    const onDeleteHandler = id => {
+        dispatch(fetchDataDelete(id));
+        dispatch(fetchData());
+        setModalOpen(false)
+    };
+
     return (
         <>
             <Modal show={modalOpen}>
                 <ContactInfo
                     contact={contactSelect}
                     onCancel={onCancelModalHandler}
-                    onEdit = {onEditHandler}
+                    onEdit={onEditHandler}
+                    onDelete={onDeleteHandler}
                 />
             </Modal>
             <ul className="ContactListUl">

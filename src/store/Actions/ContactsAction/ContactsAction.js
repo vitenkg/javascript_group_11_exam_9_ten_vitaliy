@@ -33,3 +33,14 @@ export const fetchData = () => {
         }
     };
 };
+
+export const fetchDataDelete = id => {
+    return async (dispatch, getState) => {
+        try {
+            await axiosApi.delete('/contacts/' + id + '.json');
+
+        } catch (e) {
+            dispatch(fetchContactsFailure())
+        }
+    };
+};

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import InputForm from "../../Components/InputForm/InputForm";
 import {editContact, fetchDataContact, fetchDataContactEdit} from "../../store/Actions/EditAction/EditAction";
+import {fetchData} from "../../store/Actions/ContactsAction/ContactsAction";
 
 const EditContacts = ({match, history}) => {
     const id = match.params.id.slice(1);
@@ -20,6 +21,7 @@ const EditContacts = ({match, history}) => {
     const onSubmitHandler = e => {
         e.preventDefault();
         dispatch(fetchDataContactEdit(contact, id));
+        dispatch(fetchData());
         history.replace('/');
     };
     return (

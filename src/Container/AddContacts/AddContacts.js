@@ -3,6 +3,7 @@ import './AddContacts.css';
 import {useDispatch, useSelector} from "react-redux";
 import {addContacts, fetchDataContactAdd} from "../../store/Actions/AddAction/AddAction";
 import InputForm from "../../Components/InputForm/InputForm";
+import {fetchData} from "../../store/Actions/ContactsAction/ContactsAction";
 
 const AddContacts = ({history}) => {
     const dispatch = useDispatch();
@@ -22,7 +23,8 @@ const AddContacts = ({history}) => {
     const onSubmitHandler = e => {
         e.preventDefault();
         dispatch(fetchDataContactAdd(contact));
-        history.replace('/');
+        dispatch(fetchData());
+        history.push('/');
     };
 
     return (

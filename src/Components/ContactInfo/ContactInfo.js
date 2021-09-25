@@ -2,7 +2,7 @@ import React from 'react';
 import Button from "../UI/Button/Button";
 import './ContactInfo.css';
 
-const ContactInfo = ({contact,onCancel, onEdit}) => {
+const ContactInfo = ({contact,onCancel, onEdit, onDelete}) => {
     return (
         <>
             <h3>Данные контакта</h3>
@@ -15,6 +15,8 @@ const ContactInfo = ({contact,onCancel, onEdit}) => {
             <p className="InfoPD">{contact.email}</p>
             <Button type="Danger" onClick={onCancel}>Cancel</Button>
             <Button type="Success" onClick={() => onEdit(contact.id)}>Edit</Button>
+            <Button type="Success" onClick={() => onDelete(contact.id)}>Delete</Button>
+
         </>
     );
 };
