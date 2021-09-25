@@ -1,0 +1,26 @@
+.ContactListUl {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ContactListImg {
+    width: 100px;
+}
+
+.ContactListLi {
+    display: flex;
+    border: black 1px solid;
+    width: 40%;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.ContactListP {
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.ContactListBtn {
+    align-self: center;
+}

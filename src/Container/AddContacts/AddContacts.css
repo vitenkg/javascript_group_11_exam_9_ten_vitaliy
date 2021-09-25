@@ -1,0 +1,13 @@
+.AddLabel {
+    display: inline-block;
+    width: 450px;
+}
+
+.AddInput {
+    margin-left: 10px;
+    width: 250px;
+}
+
+.AddImg {
+    width: 100px;
+}

@@ -1,0 +1,19 @@
+.InfoP {
+    display: inline-block;
+    width: 70px;
+}
+
+.InfoPD {
+    display: inline-block;
+    width: 350px;
+}
+
+.InfoImg {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.InfoImg {
+    width: 100px;
+}
