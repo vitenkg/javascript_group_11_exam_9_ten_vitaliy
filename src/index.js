@@ -7,12 +7,14 @@ import App from './App';
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import AddReducer from "./store/Reducers/AddReducer/AddReducer";
 import ContactsReducer from "./store/Reducers/ContactsReducer/ContactsReducer";
+import EditReducer from "./store/Reducers/EditReducer/EditReducer";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
     add: AddReducer,
     contactsList: ContactsReducer,
+    edit: EditReducer,
 });
 
 const store = createStore(rootReducer, composeEnhancer(

@@ -17,7 +17,15 @@ export const fetchData = () => {
             dispatch(fetchContactsRequest());
             const response = await axiosApi.get('/contacts.json');
             const data = Object.keys(response.data).map(type => {
-                return {name: response.data[type].name, phone: response.data[type].phone, id: type, photo: response.data[type].photo, email: response.data[type].email}
+                if (response.data[type].photo === '') {
+                    response.data[type].photo = 'https://www.neils.org/wp-content/uploads/2016/06/no-image.png';
+                }
+                return {name: response.data[type].name,
+                    phone: response.data[type].phone,
+                    id: type,
+                    photo: response.data[type].photo,
+                    email: response.data[type].email
+                }
             });
             dispatch(fetchContactsSuccess(data));
         } catch (e) {

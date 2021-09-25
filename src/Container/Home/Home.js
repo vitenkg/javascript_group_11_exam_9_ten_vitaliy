@@ -16,7 +16,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(fetchData());
-    }, [dispatch]);
+    }, [dispatch, history]);
 
     const onClickHandler = (data) => {
         setModalOpen(true);
