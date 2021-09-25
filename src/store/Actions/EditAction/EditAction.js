@@ -44,7 +44,6 @@ export const fetchDataContact = id => {
                 email: response.data.email,
                 photo: response.data.photo,
             }
-            console.log('data edit: ', data);
             dispatch(fetchFetchContactsSuccess(data));
         } catch (e) {
             dispatch(fetchEditContactsFailure())

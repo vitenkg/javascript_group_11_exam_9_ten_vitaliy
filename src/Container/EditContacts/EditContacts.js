@@ -14,7 +14,7 @@ const EditContacts = ({match, history}) => {
     }, [dispatch, id]);
 
     const onChangeHandler = e => {
-        let {name, value} = e.target;
+        const {name, value} = e.target;
         dispatch(editContact({name, value}))
     };
 

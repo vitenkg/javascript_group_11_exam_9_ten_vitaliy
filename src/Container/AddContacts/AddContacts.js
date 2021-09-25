@@ -16,7 +16,6 @@ const AddContacts = ({history}) => {
             setUrlAvatar(value);
         }
 
-
         dispatch(addContacts({name, value}))
     };
 
